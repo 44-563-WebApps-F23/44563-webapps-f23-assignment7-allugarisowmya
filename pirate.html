@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Pirate Adventure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dde7c0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #a77035;
+        }
+
+        div {
+            background-color: #cfdbe8;
+            border: 1px solid #e8acac;
+            padding: 10px;
+            margin: 9px;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 21px;
+            margin: 0;
+        }
+
+        #locations, #penalty {
+            font-weight: bold;
+        }
+
+        #help {
+            color: #d22e78;
+            cursor: pointer;
+        }
+
+        #help:hover {
+            text-decoration: underline;
+        }
+
+        .location img { 
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .location {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #game-field {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find the treasure by Allugari Sowmya Reddy</h1>
+    <div>
+        <p>Click on the locations to search for treasure, beware the traps.</p>
+    </div>
+    <div>
+        <p id="locations">Number of locations checked is zero.</p>
+    </div>
+    <div>
+        <p id="penalty">Penalty is zero.</p>
+    </div>
+    <div>
+        <p>Click for help.</p>
+    </div>
+    <div>
+        <p id="help">Help report</p>
+    </div>
+    <div id="game-field">
+        
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+        <div class="location"><img src="treasure_Img.jpg" alt="Treasure"></div>
+        <div class="location"><img src="trap_Img.jpg" alt="Trap"></div>
+        <div class="location"><img src="pirate_Img.jpg" alt="Pirate"></div>
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+        <div class="location"><img src="treasure_Img.jpg" alt="Treasure"></div>
+        <div class="location"><img src="trap_Img.jpg" alt="Trap"></div>
+        <div class="location"><img src="pirate_Img.jpg" alt="Pirate"></div>
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+        <div class="location"><img src="treasure_Img.jpg" alt="Treasure"></div>
+        <div class="location"><img src="trap_Img.jpg" alt="Trap"></div>
+        <div class="location"><img src="pirate_Img.jpg" alt="Pirate"></div>
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+        <div class="location"><img src="treasure_Img.jpg" alt="Treasure"></div>
+        <div class="location"><img src="trap_Img.jpg" alt="Trap"></div>
+        <div class="location"><img src="pirate_Img.jpg" alt="Pirate"></div>
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>
+        <div class="location"><img src="treasure_Img.jpg" alt="Treasure"></div>
+        <div class="location"><img src="trap_Img.jpg" alt="Trap"></div>
+        <div class="location"><img src="pirate_Img.jpg" alt="Pirate"></div>
+        <div class="location"><img src="starting_Img.jpg" alt="Starting Location"></div>   
+    </div>
+</body>
+</html>
+
