@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        header {
+            background-color: #503f2c;
+            color: rgba(255, 255, 255, 0.508);
+            padding:28px;
+            text-align: center;
+        }
+
+        main {
+            padding: 28px;
+        }
+
+        p {
+            margin-bottom: 18px;
+        }
+
+        .big-text {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .btn-start-timer, .btn-react, .btn-new-game {
+            font-size: 22px;
+            margin-top: 18px;
+            margin-right: 8px;
+        }
+    </style>
+    <title>Reaction Time Check Game</title>
+    
+    <script>
+        let reactTime;
+
+        function recordTime() {
+            reactTime = Date.now();
+            console.log('React Time:', reactTime);
+        }
+
+        function startTimer() {
+            let countdownTime = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
+
+            let tooSlowTimeout = setTimeout(() => {
+                document.getElementById('target').innerText = 'Too Slow';
+            }, countdownTime * 1000);
+
+            for (let i = 0; i < 9; i++) {
+                setTimeout(() => {
+                    document.getElementById('counter').innerText = `Count: ${i}`;
+                }, (countdownTime - i) * 1000);
+            }
+
+            setTimeout(() => {
+                clearTimeout(tooSlowTimeout);
+                if (reactTime === undefined) {
+                    document.getElementById('target').innerText = 'Too Slow';
+                } else {
+                    let endTime = Date.now();
+                    let elapsedTime = endTime - reactTime;
+                    document.getElementById('target').innerText = `Your time: ${elapsedTime} ms`;
+                }
+            }, countdownTime * 1000);
+        }
+
+        function startNewGame() {
+            reactTime = undefined;
+            document.getElementById('target').innerText = 'Your time: ';
+            document.getElementById('counter').innerText = 'Count: ';
+
+            let countdownTime = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
+
+            let tooSlowTimeout = setTimeout(() => {
+                document.getElementById('target').innerText = 'Too Slow';
+            }, countdownTime * 1000);
+
+            for (let i = 0; i < 9; i++) {
+                setTimeout(() => {
+                    document.getElementById('counter').innerText = `Count: ${i}`;
+                }, (countdownTime - i) * 1000);
+            }
+
+            setTimeout(() => {
+                clearTimeout(tooSlowTimeout);
+                if (reactTime === undefined) {
+                    document.getElementById('target').innerText = 'Too Slow';
+                } else {
+                    let endTime = Date.now();
+                    let elapsedTime = endTime - reactTime;
+                    document.getElementById('target').innerText = `Your time: ${elapsedTime} ms`;
+                }
+            }, countdownTime * 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center p-4">
+        <h1>Speed Check by Sowmya Reddy Allugari</h1>
+    </header>
+
+    <main class="container mt-4">
+        <p class="big-text" id="target">Your time: </p>
+        <p class="big-text" id="counter">Count: </p>
+
+        <button class="btn btn-success btn-start-timer" onclick="startTimer()">Start Timer</button>
+        <button class="btn btn-danger btn-react" onclick="recordTime()">React</button>
+        <button class="btn btn-secondary btn-new-game" onclick="startNewGame()">New Game</button>
+    </main>
+</body>
+</html>
